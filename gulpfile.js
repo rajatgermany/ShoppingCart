@@ -3,10 +3,7 @@ var concat = require('gulp-concat')
 var rename = require('gulp-rename')
 var ngAnnotate = require('gulp-ng-annotate')
 var uglify = require('gulp-uglify');
-
 var SrcJS = ['Development/components/**/*.js', '!Development/components/mainapp.min.js']
-
-
 gulp.task('DevelopmentApp', function(){
 
     return gulp.src(['Development/components/**/*.js', '!Development/components/mainapp.min.js'])
@@ -15,12 +12,7 @@ gulp.task('DevelopmentApp', function(){
         .pipe(uglify())
         .pipe(rename('mainapp.min.js'))
         .pipe(gulp.dest('Development/components/'));
-
-
 })
-
-
-
 
 gulp.task('Vendor', function(){
     return gulp.src(['Development/lib/angular/angular.js' ,
@@ -43,16 +35,10 @@ gulp.task('Vendor', function(){
 
 })
 
-
-
 gulp.task('watch', function(){
 
     gulp.watch(SrcJS, ['DevelopmentApp-watch'])
-
 })
 
-
 gulp.task('DevelopmentApp-watch', ['DevelopmentApp'])
-
-
 gulp.task('default' , ['watch'])

@@ -39,7 +39,7 @@ var authentication = {
                     var token = jwt.sign(user, app.get('SuperSecret'))
                     user.Token = token;
                     user.save(function (err, user) {
-                        console.log('Token Saved')
+
                     });
 
                     res.json({

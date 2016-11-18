@@ -35,14 +35,11 @@ var UserManagement = {
     },
 
 
-
-
     GetUser : function(req,res){
         Register.find({Token: req.headers.authorization}, function (err, docs) {
                 res.json(docs)
             })
         },
-
 
     GetCart : function(req,res){
         Cart.find({Customer:req.headers.authorization}, function(err,docs){
