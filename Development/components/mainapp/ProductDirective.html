@@ -1,0 +1,17 @@
+
+<div class = 'container'>
+    <div class="col-xs-5">
+        <div class="well well-lg" style= "max-height: 3500px">
+    <h3><strong>{{data.Name}}</strong><span class="pull-right label label-primary">
+        {{data.Price | currency}}</span></h3>
+            <select ng-model = 'data.Quantity'>
+                <option>1</option>
+                <option>2</option>
+            </select>
+        <span class = 'pull-left'><button type = 'button' class = 'btn btn-primary' ng-click = 'add()(data)'>Add</button></span>
+        <span class="pull-right">{{data.Like}}<button type = 'button' class = 'btn btn-primary' ng-click = 'like()(data._id)'>Like</button></span>
+
+    </div>
+
+</div>
+    </div>

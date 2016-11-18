@@ -1,0 +1,33 @@
+
+
+
+<div class = 'panel '>
+<h3 style = 'text-align: center'>Welcome {{User}}</h3>
+<div class = 'col-xs-3' >
+    <div>
+        <button style="margin-left: 100px ; margin-top: 50px" type = 'button' class = 'btn btn-default btn-lg' ng-click = 'selectCategory()' ng-class = getClass(i.Category)>Home</button>
+    <div  ng-repeat = 'i in products|unique : "Category" ' style="margin-left: 100px ; margin-top: 50px">
+            <button  ng-class = "getClass(i.Category)" type = 'button' class = 'btn btn-default btn-lg' ng-click = 'selectCategory(i.Category)'>{{i.Category}}</button>
+        <br>
+    </div>
+        </div>
+</div>
+    <div class = 'col-xs-2'>
+
+    </div>
+<div class = 'col-xs-7' style="margin-top: 55px">
+
+<div  ng-repeat = 'i in products | filter : {Category : CategoryFilter} | newFilter:newpage:size'>
+    <div class ='col-xs-12'>
+    <rajat  data ='i' like ="Like" add = 'AddToCart'></rajat>
+        </div>
+</div>
+    <div  class = 'btn-group'>
+
+        <a class="btn btn-default btn-lg" ng-repeat = 'page in products|filter : {Category : CategoryFilter}|pagecount: size'
+           ng-class = 'getPageClass($index+1)' ng-click = 'SelectedPage($index+1)'>{{$index+1}}</a>
+    </div>
+</div>
+</div>
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div  ng-repeat = 'i in item'>
+    <div class = 'col-xs-4'>
+    </div>
+    <div class="col-xs-5">
+                <div class="well">
+                    <h3><strong>{{i._source.Name}}</strong><span class="pull-right label label-primary">
+                        <button type = 'button' class = 'btn btn-primary'><a ui-sref = 'ViewProduct({product_id:i._id})'  class = 'label label-default'>View</a></button>
+        </span></h3>
+                </div>
+
+            </div>
+    <div class = 'col-xs-3'>
+
+    </div>
+
+    </div>
+
+</body>
+</html>

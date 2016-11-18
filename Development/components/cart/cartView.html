@@ -1,0 +1,40 @@
+<div class = 'panel'>
+
+    <div class = 'well' ng-if = 'cart.length == 0'>
+        <h1>Please Add Some Items</h1>
+    </div>
+    <table class = 'table' ng-if = 'cart.length != 0'>
+        <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+        <tr  ng-repeat = 'product in cart'>
+            <td>{{product.Name}}</td>
+            <td>{{product.Category}}</td>
+            <td>{{product.Quantity}}</td>
+            <td>{{product.Price|currency}}</td>
+            <td>{{product.Quantity*product.Price|currency}}</td>
+
+            <td><button type = 'button'  ng-click = 'Remove(product)' class = 'btn btn-danger btn-sm'><span class="glyphicon glyphicon-remove"> </button>
+                <button type = 'button' class = 'btn btn-primary btn-sm'><a ui-sref = 'EditProduct({product_id:product.id})'><span class="glyphicon glyphicon-edit"> </a></button>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<div>
+   <h3  ng-if = 'cart.length != 0'>Total Amount {{Total|currency}}</h3>
+</div>
+
+<div class = 'col-xs-4'>
+</div>
+<div class = 'button-group'>
+    <button type = 'button'  ng-click = 'Home()'class = 'btn btn-primary btn-lg'>ContinueShopping</button>
+    <button type = 'button' class = 'btn btn-primary' ><a ui-sref = 'PlaceOrder' class = 'btn btn-default'  ng-disabled = 'cart.length == 0'>PlaceOrder </a></button>
+
+</div>

@@ -1,0 +1,40 @@
+
+<div class = 'container'>
+    <div class = 'col-xs-2'>
+    </div>
+    <div ng-show = 'Data' class = 'col-xs-6'>
+        <div class = 'well'>
+            <h3>Your Orders Will be Shipped to this Address</h3>
+            <br>
+            <div class = 'text-center'>
+                <p><strong>{{Name}}</strong></p>
+                <p>{{Address}}</p>
+            </div>
+        </div>
+        <div class = 'text-center'class = 'button-group'>
+            <button type = 'button'  ng-click = 'Home()'class = 'btn btn-primary btn-lg'>Pay</button>
+            <button type = 'button' class = 'btn btn-primary btn-lg ' ng-click = 'EditShipping()'>EditShipping</button>
+        </div>
+    </div>
+<ng-include ng-show = 'newForm '  src = "'/placeOrder/EditShippingDetails.html'"></ng-include>
+    <div  ng-show = 'Form'class = 'col-xs-6'>
+        <p>Please enter the address where you wants your good to deleiver !!!</p>
+        <div  class = 'well'>
+            <form name = 'AddShippingDetails' novalidate ng-submit = 'addDetails(ShippingDetails)'>
+                <div class ='form-group'>
+                    <label>Name of the Recipeint</label>
+                    <input type = 'text' class = 'form-control' ng-model = 'ShippingDetails.Name' required>
+                </div>
+                <div class ='form-group'>
+                    <label>Address</label>
+                    <input type = 'text' class = 'form-control' ng-model = 'ShippingDetails.Address' required>
+                </div>
+                <div class = 'text-center'>
+                    <button type = 'submit' class = 'btn btn-primary' ng-disabled = 'AddShippingDetails.$invalid'>Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

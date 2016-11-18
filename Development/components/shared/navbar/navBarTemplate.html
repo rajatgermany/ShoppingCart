@@ -1,0 +1,14 @@
+
+
+<ul class="nav nav-tabs">
+    <li ng-class="{active: currentState.match('home')}"><a ui-sref="home">Home</a></li>
+    <li ng-class="{active: currentState.match('ShippingDetails')}"><a ui-sref="ShippingDetails">AddShippingDetails</a></li>
+    <li ng-class="class()"><a ui-sref="Login">Login</a></li>
+    <li ng-class="{active: currentState.match('Login')}"><a ui-sref ='ViewCart'>Items = {{ItemCount}} | {{Total|currency}}<span class="glyphicon glyphicon-shopping-cart"></span></a>
+    </li>
+    <li ng-class="{active: currentState.match('Login')}"><a href = '' ng-click = 'Logout()'>Logout <span class="glyphicon glyphicon-log-out"></span></a></li>
+
+</ul>
+
+
+
