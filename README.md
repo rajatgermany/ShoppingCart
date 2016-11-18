@@ -1,5 +1,5 @@
 # ShoppingCart
-#### Single Page Application- Authenticated User Add Items to their Cart and Ship to their Address
+#### It is a Single Page Mean  stack  shopping cart  prototype application where authenticated user can buy the product and  ship them  to their address. Rest API  protected using the Token authentication . Product  facets along with single  product  search facility  powered by elastic search is also built in the app. Code is structured  in efficient  modular way  using  JavaScript  Single page application style guide.
 
 ## Stack
 
