@@ -24,10 +24,14 @@ var UserManagement = {
             product.Like = product.Like + 1;
             product.save(function (err, docs) {
                 Register.findOne({Token: req.header.authorization}, function (err, user) {
-                    user.Products.push(product._id)
-                    user.save(function (err, updateddocs) {
-                        console.log(updateddocs)
-                    })
+                    if(err){
+                        res.send(err)
+                    }
+                    else {
+                        user.save(function (err, updateddocs) {
+                            res.json({message: 'DocUpdated'})
+                        })
+                    }
                 })
             })
         })

@@ -8,7 +8,7 @@ angular.module('editProduct', [])
     $scope.AddToCart = function(product) {
         Promise = cartFactory.addProduct(product)
         Promise.then(function (value) {
-            $scope.$emit('myEvent', 'yo')  // Event is emiited each item a Priduct is added to the Cart
+            $scope.$emit('myEvent', 'yo')  // Event is emiited each item a Product is added to the Cart
         })
 
     }

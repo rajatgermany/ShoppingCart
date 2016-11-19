@@ -11,19 +11,23 @@ angular.module('homeApp', [])
          * Lists all the Product
          */
 
-        $scope.products = resourceFactory.query(function(result, responseHeaders){
-        console.log(result);
-        userFactory
-            .query()
-            .$promise
-            .then(function(result){
-                $scope.User = result[0].Name
+        function GetProducts() {
+            $scope.products = resourceFactory.query(function (result, responseHeaders) {
+                console.log(result);
+                userFactory
+                    .query()
+                    .$promise
+                    .then(function (result) {
+                        $scope.User = result[0].Name
+                    });
+
+            }, function (responseHeaders) {
+                alert('Api Access Forbidden')
+
             });
 
-    }, function(responseHeaders){
-            var message = '<strong>Api Access ForBidden !! </strong> ';
-
-    });
+        }
+        GetProducts();
 
         /**
          *
@@ -33,7 +37,8 @@ angular.module('homeApp', [])
     $scope.Like = function(product_id){
         $scope.like = true;
         homeFactory.update({id:product_id , like: $scope.like}, function(res){   //Like Value Updated
-            }, function(httpResponse){
+            GetProducts()
+        }, function(httpResponse){
             console.log(httpResponse)
         });
 

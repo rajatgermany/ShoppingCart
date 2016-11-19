@@ -27,10 +27,10 @@ gulp.task('Vendor', function(){
         'Development/lib/angular-filter/dist/angular-filter.js'
 
     ])
-        .pipe(concat('vendor5.js'))
+        .pipe(concat('vendor.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(rename('vendor5.min.js'))
+        .pipe(rename('vendor.min.js'))
         .pipe(gulp.dest('Development/'));
 
 })
